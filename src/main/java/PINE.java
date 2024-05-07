@@ -124,10 +124,7 @@ public class PINE {
 
     private static void openDatabaseConnection() throws SQLException {
         System.out.println("Connecting to database...");
-        connection = DriverManager.getConnection(
-                "jdbc:mariadb://", //--> hier muss connection zu XAMMP hinzugefügt werden
-                "" , "" //-> DB username und passwort
-        );
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/pine", "root", "");
         connection.isValid(5);
         System.out.println("Connection successful: " + connection.isValid(5));
     }
